@@ -270,7 +270,7 @@ p {
 
 .floating-image {
   animation: float 6s ease-in-out infinite;
-  max-width: 80%;
+  max-width: 78%;
   height: auto;
   margin-left: 0px;
   margin-top: 90px;
@@ -1979,6 +1979,25 @@ textarea {
   color: white;
 }
 
+@media (max-width: 1024px) {
+  .parralax h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .parralax h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .parralax h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
 .parralax p {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
@@ -3106,31 +3125,5 @@ textarea {
   width: 180px;
   height: auto;
   padding: 0;
-}
-.parralax h1 {
-  font-size: 4rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-@media (max-width: 1024px) {
-  .parralax h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .parralax h1 {
-    font-size: 2.7rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .parralax h1 {
-    font-size: 2.2rem;
-  }
 }
 
