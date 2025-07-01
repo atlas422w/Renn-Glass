@@ -270,9 +270,9 @@ p {
 
 .floating-image {
   animation: float 6s ease-in-out infinite;
-  max-width: 78%;
+  max-width: 67%;
   height: auto;
-  margin-left: 0px;
+  margin-right: 8px;
   margin-top: 90px;
 }
 
