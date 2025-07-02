@@ -475,6 +475,13 @@ p {
   margin-bottom: var(--space-xs);
   font-family: var(--font-heading);
 }
+.stat-number2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-heading);
+}
 
 .stat-label {
   font-size: 0.9rem;
@@ -3138,23 +3145,7 @@ textarea {
 }
 
 
-@keyframes gradientWave {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 
-.stat-item {
-  background: linear-gradient(135deg, 
-              rgba(255,30,40,0.1) 0%, 
-              rgba(255, 242, 242, 0.05) 50%, 
-              rgba(255,30,40,0.1) 100%);
-  background-size: 200% 200%;
-  animation: gradientWave 6s ease infinite;
-}
 .value-card::before {
   content: '';
   position: absolute;
@@ -3384,4 +3375,42 @@ textarea {
   .mobile-menu-btn.active .menu-line:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
+}
+
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  transition: all 0.3s ease;
+}
+
+/* Effet pendant l'animation */
+.stat-number.animating {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255, 30, 40, 0.3);
+}
+.stat-item .stat-number {
+  display: inline-block;
+  min-width: 1.2em; /* Garde la même largeur pendant l'animation */
+  transition: all 0.3s ease;
+}
+
+/* Effet pendant l'animation */
+.stat-item .stat-number.animating {
+  transform: scale(1.1);
+  color: var(--primary-light);
+  text-shadow: 0 0 8px rgba(255, 30, 40, 0.4);
+}
+
+/* Animation terminée */
+.stat-item .stat-number.completed {
+  animation: pulse 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
