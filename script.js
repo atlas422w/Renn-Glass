@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Démarrer l'animation après un léger délai
   setTimeout(animateGradient, 500);
 
+
+  
+
   // ==============================================
   // Animation des statistiques (compteurs)
   // ==============================================
@@ -223,25 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ==============================================
-  // Menu mobile
-  // ==============================================
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-  
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      
-      // Animation des lignes du bouton burger
-      const menuLines = document.querySelectorAll('.menu-line');
-      menuLines.forEach((line, index) => {
-        line.style.animation = `menuLine${index + 1} 0.4s ease forwards`;
-      });
-    });
-  }
 
+// Fermer le menu quand on clique sur un lien
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
   // ==============================================
   // Effet de parallaxe
   // ==============================================
