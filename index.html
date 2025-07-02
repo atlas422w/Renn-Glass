@@ -196,15 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
         
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number" data-count="15">5</div>
+            <div class="stat-number" data-target="15">5</div>
             <div class="stat-label">Années</div>
+
           </div>
           <div class="stat-card">
-            <div class="stat-number" data-count="24">50 000</div>
+            <div class="stat-number"  data-target="5000">50 00</div>
             <div class="stat-label">Réparation</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number" data-count="5000">4.9/5
+            <div class="stat-number2" >4.9/5
             </div>
             <div class="stat-label">Staisfaction des clients</div>
           </div>
@@ -212,7 +213,37 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     </div>
-    
+                <script>// Animation des chiffres statistiques
+function animateValue(element, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const value = Math.floor(progress * (end - start) + start);
+    element.textContent = value;
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+// Lancer l'animation quand les éléments sont visibles
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = +entry.target.getAttribute('data-target');
+      animateValue(entry.target, 0, target, 2000);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(stat => {
+  stat.textContent = '0'; // Initialiser à 0
+  statsObserver.observe(stat);
+});</script>
 <div class="values-section">
   <h3 class="values-title">Nos Valeurs</h3>
   
@@ -363,19 +394,19 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="location-info">
       <div class="location-stats">
         <div class="stat-item">
-          <div class="stat-number">3</div>
+          <div class="stat-number" data-target="3">3</div>
           <div class="stat-label">Véhicules ateliers</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">4</div>
+          <div class="stat-number" data-target="4">4</div>
           <div class="stat-label">Tehniciens certifiés</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">1</div>
+          <div class="stat-number" data-target="1">1</div>
           <div class="stat-label">stock vitrage</div>
         </div>
       </div>
-      
+
       <div class="location-text">
         <h3>Basés à Rennes, nous couvrons toute la Bretagne</h3>
         <p>Notre centre opérationnel est situé à Noyal-sur-Vilaine, avec des antennes mobiles couvrant tout le territoire breton.</p>
@@ -387,6 +418,50 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  // Configuration de l'animation
+  const animationConfig = {
+    duration: 700, // Durée en ms
+    delay: 0,     // Délai entre chaque élément
+    easing: t => t * (2 - t) // Courbe d'animation (ease-out)
+  };
+
+  // Fonction d'animation
+  const animateCounter = (element, target) => {
+    let start = 0;
+    const increment = target / (animationConfig.duration / 16);
+    const updateCounter = () => {
+      start += increment;
+      if (start < target) {
+        element.textContent = Math.ceil(start);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    };
+    updateCounter();
+  };
+
+  // Observer pour déclencher l'animation
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          const target = parseInt(entry.target.dataset.target);
+          animateCounter(entry.target, target);
+        }, index * animationConfig.delay);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Initialisation des compteurs
+  document.querySelectorAll('.stat-item .stat-number').forEach(counter => {
+    counter.textContent = '0';
+    counterObserver.observe(counter);
+  });
+});</script>
 
 <div class="location-map">
   <div id="map-container" class="floating-map">
