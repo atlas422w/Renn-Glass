@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>RENN'GLASS - Réparation & Remplacement de Vitrage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expert en réparation et remplacement de vitrage pour véhicules et bâtiments">
+  
+  <!-- Préchargement des polices -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Satoshi:wght@400;700&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700&family=Satoshi:wght@400;700&display=swap">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" 
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v12.0">
+  </script>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="glass-nav">
+    <div class="nav-container">
+      <a href="#hero" class="logo-link">
+        <img src="Images/Logo2.png" alt="RENN'GLASS Logo" class="logo-img" loading="lazy">
+      </a>
+      
+      <div class="nav-links-wrapper">
+        <div class="nav-links">
+          <a href="#about" class="nav-link hover-underline">Qui Sommes-Nous</a>
+          <a href="#services" class="nav-link hover-underline">Nos Services</a>
+          <a href="#localisation" class="nav-link hover-underline">Localisation</a>
+          <a href="#recrutement" class="nav-link hover-underline">Postulez</a>
+        </div>
+        <a href="#stay-connected" class="nav-link cta-button">Contact</a>
+      </div>
+      
+      <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Section Hero -->
+  <section id="hero" class="hero-section">
+    <div class="particles-background" id="particles-js"></div>
+    
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="text-gradient animate-gradient">RENN'GLASS</span>
+        </h1>
+        <h2 class="hero-subtitle">Réparation & Remplacement de Vitrage</h2>
+        <p class="hero-description">
+          Experts en solutions vitrées innovantes pour tout types de véhicules. 
+          <span class="text-highlight">Intervention rapide </span> dans tout l'Ouest.
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="primary-button pulse-effect">Qui sommes-nous</a>
+          <a href="#services" class="secondary-button">Nos services</a>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <img src="Images/machineinverse.png" alt="Véhicule RENN'GLASS" class="floating-image" loading="lazy">
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <span class="scroll-dot"></span>
+    </div>
+  </section>
+
+  <!-- Section À propos -->
+  <section id="about" class="section static about-section">
+    <div class="section-header">
+      <h2 class="section-title">Qui Sommes-Nous</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Votre partenaire vitrage depuis 2010</p>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-image">
+        <div class="image-wrapper glass-border">
+          <img src="Images/IMG-20250709-WA0063.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Équipe RENN'GLASS" loading="lazy">
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <h3 class="about-heading">Une expertise reconnue dans l'Ouest</h3>
+        <p class="about-text">
+          Fondé en 2014, RENN'GLASS s'est imposé comme le spécialiste du vitrage pour véhicules de plus de +3t5. 
+          Notre équipe de 5 techniciens certifiés intervient sur votre site.
+        </p>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" data-target="11">5</div>
+            <div class="stat-label">Années</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10000">5000</div>
+            <div class="stat-label">Interventions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number2">4.9/5</div>
+            <div class="stat-label">Satisfaction des clients</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="values-section">
+      <h3 class="values-title">Nos Valeurs</h3>
+      
+      <div class="values-grid">
+        <!-- Valeur 1 -->
+        <div class="value-card hover-glow">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12,2L4,5v6.09c0,5.05 3.41,9.76 8,10.91c4.59-1.15 8-5.86 8-10.91V5L12,2z"/>
+            </svg>
+          </div>
+          <h4 class="value-name">Qualité</h4>
+          <p class="value-description">Utilisation de produit d'origine <br> Sika - Pilkington - Saint Gobain</p>
+        </div>
+        
+        <!-- Valeur 2 -->
+        <div class="value-card hover-glow">
+          <div class="value-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12,3L2,12h3v8h6v-6h2v6h6v-8h3L12,3z"/>
+            </svg>
+          </div>
+          <h4 class="value-name">Expérience</h4>
+          <p class="value-description">+20 ans sur le terrain dans l'univers du vitrage pour tout type de véhicule</p>
+        </div>
+        
+        <!-- Valeur 3 -->
+        <div class="value-card hover-glow">
+          <div class="value-icon">
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="1280.000000pt" height="1280.000000pt" viewBox="0 0 1280.000000 1280.000000"
+ preserveAspectRatio="xMidYMid meet">
+<metadata>
+Created by potrace 1.15, written by Peter Selinger 2001-2017
+</metadata>
+<g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
+fill="#ffffff" stroke="none">
+<path d="M6495 12789 c-698 -5 -1353 -12 -1455 -15 l-185 -7 80 -27 c271 -93
+497 -228 739 -439 219 -191 444 -474 655 -824 103 -171 1213 -2216 1207 -2225
+-2 -4 -182 -122 -400 -262 l-396 -255 277 -6 c153 -4 721 -9 1263 -13 542 -3
+1073 -9 1180 -12 l195 -5 753 1243 c414 684 764 1263 779 1287 l26 44 -114
+-60 c-63 -34 -220 -116 -349 -183 -129 -67 -285 -149 -346 -181 l-110 -58
+-316 582 c-174 320 -327 605 -341 633 -43 85 -141 225 -217 307 -207 224 -480
+384 -790 463 -85 22 -450 24 -2135 13z"/>
+<path d="M4285 12663 c-205 -26 -428 -132 -592 -280 -51 -46 -1509 -2291
+-1496 -2303 4 -5 624 -373 1377 -819 797 -472 1373 -808 1378 -803 5 5 337
+544 739 1198 l729 1188 -75 142 c-492 940 -1159 1570 -1765 1669 -87 14 -222
+18 -295 8z"/>
+<path d="M10179 7814 c-745 -455 -1360 -832 -1368 -840 -12 -11 89 -203 652
+-1246 l666 -1233 318 0 c240 1 353 5 463 19 448 54 782 146 1095 301 186 92
+315 179 437 294 247 232 374 543 355 871 -13 214 20 139 -592 1345 -307 605
+-583 1148 -615 1207 l-56 108 -1355 -826z"/>
+<path d="M1690 8598 c-575 -4 -1172 -11 -1328 -16 l-282 -7 420 -328 c231
+-181 420 -333 420 -338 0 -6 -191 -376 -425 -823 -233 -447 -435 -846 -449
+-887 -128 -385 31 -827 435 -1203 356 -331 733 -468 1426 -516 164 -11 666
+-16 681 -6 5 3 263 419 572 925 l562 919 77 -41 c42 -23 231 -125 421 -228
+190 -103 346 -186 348 -184 2 2 -329 619 -735 1372 l-739 1368 -179 1 c-99 0
+-650 -3 -1225 -8z"/>
+<path d="M7447 3933 l-718 -1295 238 -436 c132 -241 455 -832 718 -1314 l480
+-877 6 72 c4 39 12 250 18 467 6 217 14 421 17 453 l6 58 772 -2 c682 -1 781
+1 854 15 191 38 401 127 577 243 134 89 320 276 391 393 39 63 1618 3012 1718
+3208 15 29 1 20 -86 -55 -388 -335 -787 -498 -1423 -579 -114 -15 -290 -18
+-1462 -21 l-1333 -4 0 43 c0 76 -40 811 -48 870 l-7 57 -718 -1296z"/>
+<path d="M210 4987 c0 -3 352 -655 781 -1449 430 -793 841 -1553 913 -1687
+128 -239 133 -247 226 -341 203 -205 492 -342 861 -409 296 -54 288 -54 1571
+-58 l1198 -4 0 1609 0 1609 -622 7 c-343 3 -1091 9 -1663 12 -1879 11 -1799
+10 -1925 28 -510 76 -930 277 -1254 602 -47 48 -86 84 -86 81z"/>
+</g>
+</svg>
+          </div>
+          <h4 class="value-name">Écologie</h4>
+          <p class="value-description">Recyclage de 100% des vitres remplacées</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Services -->
+  <section class="parralax bg-services bg1" id="services">
+    <div>
+      <h1>Notre Mission</h1>
+    </div>
+  </section>
+
+  <!-- Section Services Raffinée -->
+  <section class="services-section">
+    <div class="section-header">
+      <h2 class="section-title">Nos Expertises</h2>
+      <p class="section-subtitle">Solutions vitrées professionnelles</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1: Poids Lourds -->
+      <div class="service-card">
+        <div class="service-badge">Expert</div>
+        <div class="service-image">
+          <img src="Images/image (1).png" alt="Poids Lourds" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Transport</div>
+          <h3 class="service-title">Poids Lourds</h3>
+          <p class="service-description">Installation et remplacement de vitrages pour camions, semi-remorques et véhicules de transport professionnel.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>24/7</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Urgence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Engins TP -->
+      <div class="service-card">
+        <div class="service-badge">Spécialisé</div>
+        <div class="service-image">
+          <img src="Images/Pelleteuse_sans_marques_garage_blanc_gris.png" alt="Engins TP" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Construction</div>
+          <h3 class="service-title">Engins TP</h3>
+          <p class="service-description">Vitrage résistant pour pelleteuses, bulldozers et tous engins de travaux publics et terrassement.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Blindé</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Résistant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Bus & Cars -->
+      <div class="service-card">
+        <div class="service-badge">Certifié</div>
+        <div class="service-image">
+          <img src="Images/Autocar_sans_poubelle.png" alt="Bus" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Transport Public</div>
+          <h3 class="service-title">Bus & Cars</h3>
+          <p class="service-description">Solutions vitrées pour transport collectif : bus urbains, autocars et véhicules de transport scolaire.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Sécurisé</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Conforme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Agricole -->
+      <div class="service-card">
+        <div class="service-badge">Terrain</div>
+        <div class="service-image">
+          <img src="Images/Moissonneuse_sans_marques_garage_blanc_gris.png" alt="Véhicules Agricoles" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Agriculture</div>
+          <h3 class="service-title">Machines Agricoles</h3>
+          <p class="service-description">Vitrage adapté aux tracteurs, moissonneuses et matériel agricole professionnel en milieu rural.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Terrain</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Durable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5: Manutention -->
+      <div class="service-card">
+        <div class="service-badge">Pro</div>
+        <div class="service-image">
+          <img src="Images/images (4).jpg" alt="Manutention" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Logistique</div>
+          <h3 class="service-title">Manutention</h3>
+          <p class="service-description">Vitrage spécialisé pour chariots élévateurs, transpalettes et équipements de manutention industrielle.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Industrie</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Précis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6: Camping-Cars -->
+      <div class="service-card">
+        <div class="service-badge">Loisir</div>
+        <div class="service-image">
+          <img src="Images/Camping_car_sans_marques_final.png" alt="Camping Car" loading="lazy">
+        </div>
+        <div class="service-overlay"></div>
+        <div class="service-content">
+          <div class="service-category">Loisirs</div>
+          <h3 class="service-title ">Camping-Cars</h3>
+          <p class="service-description">Installation de vitrages pour véhicules de loisirs, camping-cars et fourgons aménagés pour vos voyages.</p>
+          <div class="service-features">
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Voyage</span>
+            </div>
+            <div class="service-feature">
+              <div class="service-feature-icon"></div>
+              <span>Confort</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Localisation -->
+  <section class="parralax bg-services bg4">
+    <div>
+      <h1>Notre Présence</h1>
+    </div>
+  </section>
+
+  <section id="localisation" class="section location-section">
+    <div class="section-header">
+      <h2 class="section-title mlr">Où Sommes-Nous ?</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Notre implantation dans l'Ouest de la France</p>
+    </div>
+
+    <div class="location-container">
+      <div class="location-info">
+        <div class="location-stats">
+          <div class="stat-item">
+            <div class="stat-number" data-target="4">4</div>
+            <div class="stat-label">Véhicules ateliers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="4">4</div>
+            <div class="stat-label">Techniciens certifiés</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="1">1</div>
+            <div class="stat-label">stock vitrage</div>
+          </div>
+        </div>
+
+        <div class="location-text">
+          <h3>Basés à Noyal-sur-Vilaine, nous couvrons l'Ouest</h3>
+          <p>Notre centre de planification est situé à Noyal-sur-Vilaine, pour couvrir les 10 départements de l'Ouest de la France</p>
+          <ul class="location-features">
+            <li>4 ateliers mobiles équipés</li>
+            <li>Stock de vitrages</li>
+            <li>Techniciens certifiés</li>
+            <li>Intervention sur le lieu de votre choix</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="location-map">
+        <svg xmlns="http://www.w3.org/2000/svg" width="700" height="800" viewBox="0 0 600 700">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          
+          <g stroke="#f0f0f0" stroke-width="0.5">
+            <!-- BRETAGNE (rouge) -->
+            <!-- Finistère (29) -->
+            <path id="dep_29" class="department red-region" fill="#ff1f2a" d="M61 231l-5 4-4-2-8 1-1 4-5 1-1-4-8 1v3l-6 0-2-2-3 2-1 4-9 0-6 6 5 4-6 4 2 4-2 7 6 1 2-2 1 1 14-1 9-7-8 8 1 3 7-3-1 5 7 0 0 3-8-1-7-2-9-3-5 5 7 3-1 9 2-1 4-6 8 4 3 1 2 5-2 4-5 0h-4l-8 1-12 1-2 3 3 2 4 0 4 3 4-1 8 9 2 9-3 5 8 2 8 0 2-4-4-4 4 1 3 0 6 3 3 0v-7l2 7 5 7 10 1 0-2 2 3 7 1h4l1 1 1-7h4l3-4h2l1-5 1-2-3-3-2 2-4-4-9-1-2-6-3-7 0-2 5-4h4l6-3-1-4 1-2 0-11-3-3v-5l4-1-4-1-1-4 3-1 2-3-3-2 1-4-5-1 2-9-6-4-10 1v7h-3l0-3-5 0 0-8z">
+              <title>Finistère (29)</title>
+            </path>
+            
+            <!-- Côtes-d'Armor (22) -->
+            <path id="dep_22" class="department red-region" fill="#ff1f2a" d="M114 220l-3 3-8 1-2 2-6-4-7 5 2 4-5 7-2 9 5 1-1 4 3 2-2 3-3 1 1 4 4 1-4 1v5l3 3 0 11-1 2 1 5 6 1 0 3 4 1 3-2 2 2 7 2 5-3 2-3 4 0 6 5 5-1 4 4h2l2 3h5l1-2 2 4 4 1 6-3v-4l4-1h3l3 5 7 1 4-4 4-9 5-2 2-3 3 2 6-1 2-16 1-7-1-4-3-1-2-11-3 3-7-1 0 4-5 1 0-5-4-1-2 2v-7l-4 4-7-2-2 5-13 7v4h-3v-7l-8-4 1-6-7-5v-6l-5-1 0-6-4-1 1-4h-8l-1 4-2-5z">
+              <title>Côtes-d'Armor (22)</title>
+            </path>
+            
+            <!-- Ille-et-Vilaine (35) -->
+            <path id="dep_35" class="department red-region" fill="#ff1f2a" d="M200 244l-4 3 3 12 3 1 1 3-1 7-2 16-6 1-3-2-2 3-5 2-4 9-3 3 1 3-1 6-3 3v2l2 1h5l5 2 3 6-3 3 1 4h4l0 4-3 3-3 2 2 1 0 2-3 2 4 7 7-3 22-2 2-4 3-3 8-1 1-4 5 0 3 5 8 2 1-3 2-7 5-11 2-2 6 1v-10l-2-2v-11l-1-3v-6l3-4v-7l-2-1 1-11-3-1h-4l-4-3-4 5-3 0-3 4-3 0-6-6-2-7-1-4h-18l-7-4 5-6-9 0z">
+              <title>Ille-et-Vilaine (35)</title>
+            </path>
+            
+            <!-- Morbihan (56) -->
+            <path id="dep_56" class="department red-region" fill="#ff1f2a" d="M89 289l-6 3h-4l-5 3 0 3 3 7 1 5 10 2 4 4 2-3 3 4-2 2 0 5h-3l-2 4h-4l-2 7 4 6 6 2 2-4-1 4 5 2 7 7 2 4-1 5-1 4 5 4 2-3-2-3v-6l4 1 2-5 1 3 4 4 3-4-3-5 4 6 5-1-1-3 5 2 4 4-2 3-5-2-5-2-3 3 4 2 3 5 20-2 5 1-2 2 0 3 0 1 2 0 3-3 2 2h6l7-4 10-3 1-11 2-1-4-7 3-3-1-1-1-2 3-1 3-4-1-3h-3l-1-4 2-3-3-6-4-2h-5l-2-1v-2l3-2 1-6-1-4-1 1-7 0-3-6h-3l-4 1v4l-6 4-4-2-2-4-2 2h-4l-2-3h-2l-4-4-5 1-6-5-5 1-1 3-6 3-7-3-1-2-3 2-4 0 0-3-6-2 0-1z">
+              <title>Morbihan (56)</title>
+            </path>
+            
+            <!-- PAYS DE LA LOIRE (rouge) -->
+            <!-- Loire-Atlantique (44) -->
+            <path id="dep_44" class="department red-region" fill="#ff1f2a" d="M231 336l-1 4-8 1-3 4-1 3-23 2-9 5-1 10-10 4-7 3h-5l-3-2-3 3-1 0 1 1-6 7 1 1 2 3-4 5 4 2 7 2 0-3 4 5h7l5-5h6l-7 3 1 4 1 3-4 4h-4l1 5 7-1 10 9-1 0 7 4 2 4 6 3 5 0 2 6 7 2 5 1 3-3-3-4-1-9 2-2h4l1 3-1 6 2 2 6-2 2-6-3-3h6l2-3 2 0 5 4 3 1v-4l-2-4h-3l-1 0-2 0 2-2v-3l3-1 1-4-1-1 0-5h-4l-4-5v-3l4-3 8-1 11 0 4-2-1-7-6-5-6 0-2-1 0-6 4-4-3-4-3-6-3-3v-4l-1-1-7-2-3-4-5-1z">
+              <title>Loire-Atlantique (44)</title>
+            </path>
+            
+            <!-- Maine-et-Loire (49) -->
+            <path id="dep_49" class="department red-region" fill="#ff1f2a" d="M248 341l-1 2-1 0 0 1v4l4 2 3 7 3 4-4 4 0 6 2 1 6-1 6 5 1 8-4 2-11 0-8 1-4 2v4l4 5h4l0 5 2 1-2 4-3 1v3l-2 2 2 0 1 0h3l3 4v4l3 2h9l5 4 7-3 11 2 5-3v-5l10-1 9-1 10-1 1 3 3 2 2-4 7-8h3l4-15 5-6 0-8 4-5v-2l-2-2 1-3-5-1-15-10-14-4-5 0v-4l-4-2h-3l-6-3-5 5-9 0-4-2-11-4-2 3-6-3h-6l-6-2z">
+              <title>Maine-et-Loire (49)</title>
+            </path>
+            
+            <!-- Vendée (85) -->
+            <path id="dep_85" class="department red-region" fill="#ff1f2a" d="M241 417l-2 3h-6l3 3-2 6-6 2-2-2 1-6-1-3h-4l-2 2 1 9 3 4-3 3-5-1-7-2-2-6-5 0-6-3-2-4-7-4-10 14-1 9 11 10 0 4h3l7 20 7 4 8 7h8l3 7h8l4 6 8 4 0-6 2 2 11-6 5-1 2 6 7-3 6 4 4-2 5-1 1-2 5-3-3-4-3 3 0-3 2-5-2-4 2-3-1-10-4-6 3-3-6-7 2-4-9-8v-4l-3-5-5-4h-9l-3-2-4-1-5-4-2 0z">
+              <title>Vendée (85)</title>
+            </path>
+            
+            <!-- Sarthe (72) -->
+            <path id="dep_72" class="department red-region" fill="#ff1f2a" d="M359 273l-9 0-10 9-5 0-7 2-2 4-1 7 1 5-6 5-1 3 1 3-2 3 1 2-6 0-1 3 3 6-1 2-2 2-5 1-1 1 2 2v11l-1 3 3 2v4l5 0 14 4 15 10 5 1 3-4 7 5h4l-2-8 4 3 2-3 11-3-2-5 3-3 5-2 5-6v-7h4l1-5 1-8-4-3 3-5 4-6-5-3-5-1-5-7h-1l-1 3 0-2h-7l-4-6-6-2-2-13-3-4z">
+              <title>Sarthe (72)</title>
+            </path>
+            
+            <!-- Mayenne (53) -->
+            <path id="dep_53" class="department red-region" fill="#ff1f2a" d="M322 263l-3 0-2 4-5 2-10-1-10 5-3-2-6 4-4-3-2-5-6-2-3 3-6-1-1 10 2 1v7l-3 4v6l1 3v11l2 2v10l-6-1-2 2-5 11-2 7-1 1 7 1h5l6 4 3-3 10 4 5 2 9 0 4-5 7 3h4l1-3v-11l-2-2 1-2h5l2-2 1-2-3-6 1-3 6 0-1-2 2-4-1-2 1-3 6-5-1-4 1-8 2-4 7-2h-1l-2-6-5-2-1-8-4-3z">
+              <title>Mayenne (53)</title>
+            </path>
+            
+            <!-- MANCHE (rouge) -->
+            <path id="dep_50" class="department red-region" fill="#ff1f2a" d="M206 136l-1 3 7 7v7l-3 4 2 2 1 0 0 7 2 6 8 9 2 9 2 2v13l4 9v10l-4 9 5 13 8 2 0 4-3 2h-7l1 4 2 7 6 5 3 1 3-4 3 0 4-5 4 3h4l3 1v1l6 1 4-3 5 2 6-5 2-7 0-3 1-3-4-4-9-6-7 0-7-9 6-2 2-5-3-2 3-3 2 2 5-3 3-4 1-5-2-4 2-2-3-4 3-4-3-3-2 4-5-3-7-6 0-3 2-3 0-3-4 0 0-8-10-11 3-8h4l-3-9-16-1-8 6-9-6-14-4z">
+              <title>Manche (50)</title>
+            </path>
+            
+            <!-- AUTRES DÉPARTEMENTS (gris) -->
+            <!-- Calvados (14) -->
+            <path id="dep_14" fill="#cccccc" d="M360 173l-9 2-13 8-16 6-12-7-30-4-7-4-10 3 0 4-2 2 0 3 7 7 5 2 2-4 3 3-3 4 3 4-2 2 2 4-1 5-3 5-5 2-2-1-3 2 3 3-2 4-6 2 7 9 7 0 5 4 7-3 6-6 7 2 7-4 4-2 4 5 7-2 6 4 7-3 7-5 4-5 3 0 1 3 2 0 1-3 7-1 2 1 7-1 2-4-1-3-4-1 0-3 3-2 1-4-2-8-5-7 4-2v-1l-4-1-1-14z"/>
+            
+            <!-- Orne (61) -->
+            <path id="dep_61" fill="#cccccc" d="M367 223l-7 1-2-1-7 1-1 3-2 0-1-3-3 0-4 5-7 5-7 3-6-4-7 2-4-5-4 2-7 4-7-2-6 6-7 3 4 2 4 4-1 3 0 3-2 7-6 6 2 4 4 3 6-4 3 2 10-5 10 1 5-2 2-4h3l4 3 1 8 5 2 2 6 6 0 10-9 9 0 3 4 2 13 6 2 4 6h7l0 2 1-4h1l6 8 3 1v-9l-2-3-1-3 6-3 5-1 4-5-1-13-8-7 0-6-6-4 2-4-2-5-5-2-3-3-2-5-10-1-3-4 1-4z"/>
+            
+            <!-- Eure (27) -->
+            <path id="dep_27" fill="#cccccc" d="M375 167l-3 1-4 4-8 1 1 14 4 1v1l-4 2 5 7 2 8-1 4-3 2 0 3 4 1 1 3-3 9 3 3 10 1 2 5 3 3 5 2 2 5-2 4 5 3 5-4h5l13-7 4 2h9l2-3v-5l8-4v-6l1-2v-1l2-2-3-1v-2l-2-3 2-2 10-3 2-4 2-8 3-4 1-4 3 2 2-1-1-3-1-8-4-3-5-1-10-5-8 1-5 3-2 7-9 1-9 3 3 2-1 3h-4l-3-5h-2l-4-3 5-2-9-6-8 1-2-4-5 0-4-6z"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Parallax -->
+  <section class="parralax bg-services bg2">
+    <div>
+      <h1>Notre Avenir</h1>
+    </div>
+  </section>
+
+  <!-- Section Recrutement -->
+  <section id="recrutement" class="section recruitment-section">
+    <div class="section-header">
+      <h2 class="section-title">Rejoindre notre Équipe</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Postulez pour devenir un expert RENN'GLASS</p>
+    </div>
+
+    <div class="modern-recruitment-container">
+      <!-- Formulaire -->
+      <form id="modernRecruitmentForm" class="modern-recruitment-form" enctype="multipart/form-data">
+        <div class="form-grid">
+          <div class="form-group floating-input">
+            <input type="text" id="modernLastname" name="lastname" placeholder=" " required>
+            <label for="modernLastname">Nom *</label>
+            <div class="underline"></div>
+          </div>
+          
+          <div class="form-group floating-input">
+            <input type="text" id="modernFirstname" name="firstname" placeholder=" " required>
+            <label for="modernFirstname">Prénom *</label>
+            <div class="underline"></div>
+          </div>
+          
+          <div class="form-group floating-input">
+            <input type="email" id="modernEmail" name="email" placeholder=" " required>
+            <label for="modernEmail">Email *</label>
+            <div class="underline"></div>
+          </div>
+          
+          <div class="form-group floating-input">
+            <input type="tel" id="modernPhone" name="phone" placeholder=" ">
+            <label for="modernPhone">Téléphone</label>
+            <div class="underline"></div>
+          </div>
+        </div>
+
+        <!-- Zone de dépôt de fichiers -->
+        <div class="file-drop-zones">
+          <div class="file-drop-zone" id="cvDropZone">
+            <svg width="48" height="48" viewBox="0 0 24 24" class="upload-icon">
+              <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M8,13V15H16V13H8M8,17V19H13V17H8Z"/>
+            </svg>
+            <p>Glissez-déposez votre CV ici <span>(PDF, DOC, DOCX - Max 5MB)</span></p>
+            <input type="file" id="modernCv" name="cv" accept=".pdf,.doc,.docx" required>
+            <div class="file-info" id="modernCvFileName">Aucun fichier sélectionné</div>
+            <button type="button" class="browse-btn">Parcourir</button>
+          </div>
+          
+          <div class="file-drop-zone" id="motivationDropZone">
+            <svg width="48" height="48" viewBox="0 0 24 24" class="upload-icon">
+              <path fill="currentColor" d="M18,15V17H10V15H18M18,11V13H10V11H18M14,7V9H10V7H14M12,2A2,2 0 0,1 14,4V20A2,2 0 0,1 12,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2H12M12,4H6V20H12V4Z"/>
+            </svg>
+            <p>Glissez-déposez votre lettre de motivation ici <span>(Facultatif)</span></p>
+            <input type="file" id="modernMotivation" name="motivation" accept=".pdf,.doc,.docx">
+            <div class="file-info" id="modernMotivationFileName">Aucun fichier sélectionné</div>
+            <button type="button" class="browse-btn">Parcourir</button>
+          </div>
+        </div>
+
+        <div class="form-group floating-textarea">
+          <textarea id="modernMessage" name="message" placeholder=" " rows="4"></textarea>
+          <label for="modernMessage">Votre message (facultatif)</label>
+          <div class="underline"></div>
+        </div>
+
+        <button type="submit" class="modern-submit-btn">
+          <span>Envoyer ma candidature</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" class="send-icon">
+            <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+          </svg>
+        </button>
+      </form>
+      
+      <!-- Section droite -->
+      <div class="recruitment-sidebar">
+        <div class="sidebar-card">
+          <div class="card-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24">
+              <path fill="#FF1E28" d="M12,3L2,12h3v8h6v-6h2v6h6v-8h3L12,3z"/>
+            </svg>
+          </div>
+          <h3>Pourquoi nous rejoindre ?</h3>
+          <ul class="benefits-list">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#00F0FF" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+              </svg>
+              <span>Équipe dynamique et passionnée</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#00F0FF" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+              </svg>
+              <span>Matériel haut de gamme</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="#00F0FF" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+              </svg>
+              <span>Formation en interne</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card process-card">
+          <h3>Notre processus de recrutement</h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Réception de votre candidature</h4>
+                <p>Nous étudions votre profil</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Entretien téléphonique</h4>
+                <p>Échange de 20-30 minutes</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Rencontre en atelier</h4>
+                <p>Découverte mutuelle sur site</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Intégration</h4>
+                <p>Formation et accompagnement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Parallax -->
+  <section class="parralax bg-services bg3">
+    <div>
+      <h1>Notre Service</h1>
+    </div>
+  </section>
+
+  <!-- Section Connect -->
+  <section id="stay-connected" class="section connected-section">
+    <div class="section-header">
+      <h2 class="section-title">Connectez-vous avec Nous</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Suivez notre actualité et contactez-nous facilement</p>
+    </div>
+
+    <div class="connected-grid">
+      <!-- Carte Actualités -->
+      <div class="connected-card news-card">
+        <div class="card-header">
+          <div class="social-badge">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+            <span>Facebook</span>
+          </div>
+          <h3>Notre Actualité</h3>
+          <a href="https://www.facebook.com/Rennglass" target="_blank" class="see-more">
+            Voir plus <svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+          </a>
+        </div>
+        
+        <div class="fb-feed-container">
+          <div class="fb-page" 
+            data-href="https://www.facebook.com/Rennglass" 
+            data-tabs="timeline"
+            data-width="500" 
+            data-height="400" 
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="false">
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte Contact -->
+      <div class="connected-card contact-card">
+        <div class="card-header">
+          <div class="contact-badge">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <h3>Contact Rapide</h3>
+          <div class="emergency-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+            <span>Contact</span>
+          </div>
+        </div>
+        
+        <div class="contact-methods">
+          <a href="tel:+33223278962" class="contact-method">
+            <div class="method-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+            </div>
+            <div class="method-details">
+              <span class="method-type">Téléphone</span>
+              <span class="method-value">02 23 27 89 62</span>
+            </div>
+            <div class="method-action">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+              </svg>
+            </div>
+          </a>
+          
+          <a href="mailto:contact@renn-glass.fr" class="contact-method">
+            <div class="method-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div class="method-details">
+              <span class="method-type">Email</span>
+              <span class="method-value">contact@renn-glass.fr</span>
+            </div>
+            <div class="method-action">
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+          </a>
+          
+          <div class="contact-method">
+            <a href="https://www.google.com/maps/search/?api=1&query=8+Rue+Lépine,+35530+Noyal-sur-Vilaine" target="_blank" class="method-value">
+              <div class="method-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24">
+                  <path color="#FFFFFF" fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+            </a>
+            <div class="method-details">
+              <span class="method-type">Adresse</span>
+              <a href="https://www.google.com/maps/search/?api=1&query=8+Rue+Lépine,+35530+Noyal-sur-Vilaine" target="_blank" class="method-value" style="color: #FFFFFF; text-decoration: none;">
+                <span class="method-value">8 Rue Lépine, 35530 Noyal-sur-Vilaine</span>
+              </a>
+            </div>
+            <div class="method-action">
+              <a href="https://www.google.com/maps/search/?api=1&query=8+Rue+Lépine,+35530+Noyal-sur-Vilaine" target="_blank" class="method-value" style="color: #FFFFFF; text-decoration: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <path fill="#fff" style="color: #FFFFFF;" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="quick-contact">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@exemple.com&body=Bonjour%2C%0AJe%20vous%20contacte%20suite%20%C3%A0%20la%20visite%20de%20votre%20site%20web.%20J%E2%80%99aimerais%20en%20savoir%20davantage%20sur%20vos%20services%20et%20%C3%A9changer%20avec%20vous%20%C3%A0%20ce%20sujet." 
+            target="_blank" 
+            class="cta-button cta-button2">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#fff" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Formulaire de contact
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Confiance -->
+  <section class="trust-section">
+    <div class="trust-header">
+      <h2 class="trust-title">Ils Nous Font Confiance</h2>
+      <p class="trust-subtitle">
+        Des partenaires de qualité qui témoignent de notre expertise et de notre savoir-faire
+      </p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel-track animate" id="carouselTrack">
+        <!-- Les logos seront générés par JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-wave"></div>
+    
+    <div class="footer-content">
+      <div class="footer-column">
+        <img class="footer-logo" src="Images/Logo2.png">
+        <p class="footer-about">
+          RENN'GLASS - Expert en réparation et remplacement de vitrage 
+          pour véhicules et bâtiments depuis 2010.
+        </p>
+      </div>
+      
+      <div class="footer-column">
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">Qui sommes-nous</a></li>
+          <li><a href="#services">Nos services</a></li>
+          <li><a href="#map">Zone d'intervention</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4 class="footer-title">Contact</h4>
+        <address class="footer-address">
+          8 Rue Lépine<br>
+          35530 Noyal-sur-Vilaine<br>
+          <a href="mailto:contact@renn-glass.fr">contact@renn-glass.fr</a><br>
+          <a href="tel:+33223278962">02 23 27 89 62</a>
+        </address>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">© 2025 RENN'GLASS - Tous droits réservés</p>
+      <div class="legal-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
