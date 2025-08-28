@@ -615,7 +615,7 @@ p {
 .service-card {
   position: relative;
   aspect-ratio: 4/5;
-    height: 400px;
+  height: 400px;
   margin-left: 10%;
 
   border-radius: 20px;
@@ -2141,12 +2141,214 @@ p {
   66% { transform: translate(10px, -5px) rotate(-1deg); }
 }
 /* 7. Animation de typing pour le sous-titre hero */
+/* ==============================================
+   FIX ANIMATION HERO SUBTITLE MOBILE
+   ============================================== */
+
+/* 1. DÉSACTIVER L'ANIMATION TYPING SUR MOBILE */
 .hero-subtitle {
+  /* Animation desktop uniquement */
   overflow: hidden;
   border-right: 3px solid var(--primary);
   white-space: nowrap;
-  animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite, hideCursor 0s 4s forwards;
+  animation: typing 3s steps(40) 1s forwards, 
+             blink 0.75s step-end infinite, 
+             hideCursor 0s 4s forwards;
   width: 0;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes hideCursor {
+  to { border-color: transparent; }
+}
+
+/* 2. VERSION MOBILE SIMPLIFIÉE */
+@media (max-width: 768px) {
+  .hero-subtitle {
+    /* Réinitialiser tous les styles d'animation */
+    animation: none !important;
+    width: auto !important;
+    border: none !important;
+    border-right: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    
+    /* Animation fade-in alternative pour mobile */
+    opacity: 0;
+    animation: mobileSubtitleFade 1.5s ease-out 0.8s forwards;
+  }
+}
+
+@keyframes mobileSubtitleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. VERSION TABLETTE */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero-subtitle {
+    /* Réduire la vitesse sur tablette */
+    animation: typing 2s steps(30) 0.5s forwards, 
+               blink 0.75s step-end infinite, 
+               hideCursor 0s 3s forwards;
+  }
+}
+
+/* 4. ALTERNATIVE : ANIMATION REVEAL PROGRESSIVE */
+@media (max-width: 768px) {
+  .hero-subtitle {
+    animation: none !important;
+    width: auto !important;
+    border: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    text-align:left !important;
+    
+    /* Animation word-by-word reveal */
+    opacity: 1;
+    animation: none;
+  }
+  
+  /* Diviser le texte en mots avec JavaScript et animer chaque mot */
+  .hero-subtitle .word {
+    opacity: 0;
+    display: inline-block;
+    animation: wordReveal 0.6s ease-out forwards;
+  }
+  
+  .hero-subtitle .word:nth-child(1) { animation-delay: 0.2s; }
+  .hero-subtitle .word:nth-child(2) { animation-delay: 0.4s; }
+  .hero-subtitle .word:nth-child(3) { animation-delay: 0.6s; }
+  .hero-subtitle .word:nth-child(4) { animation-delay: 0.8s; }
+  .hero-subtitle .word:nth-child(5) { animation-delay: 1.0s; }
+}
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* 5. RESPECT DES PRÉFÉRENCES UTILISATEUR */
+@media (prefers-reduced-motion: reduce) {
+  .hero-subtitle {
+    animation: none !important;
+    width: auto !important;
+    border: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    opacity: 1 !important;
+  }
+  
+  .hero-subtitle .word {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* 6. FIX SPÉCIFIQUE WEBKIT/SAFARI MOBILE */
+@supports (-webkit-overflow-scrolling: touch) {
+  @media (max-width: 768px) {
+    .hero-subtitle {
+      animation: none !important;
+      width: auto !important;
+      border: none !important;
+      overflow: visible !important;
+      white-space: normal !important;
+      opacity: 1;
+      
+      /* Animation optimisée Safari mobile */
+      transform: translateY(10px);
+      animation: safariMobileFade 1.2s ease-out 0.5s forwards;
+    }
+  }
+}
+
+@keyframes safariMobileFade {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 7. SOLUTION HYBRIDE : ANIMATION DIFFÉRENTE PAR TAILLE */
+/* Desktop : Animation typing */
+@media (min-width: 1025px) {
+  .hero-subtitle {
+    overflow: hidden;
+    border-right: 3px solid var(--primary);
+    white-space: nowrap;
+    animation: typing 3s steps(40) 1s forwards, 
+               blink 0.75s step-end infinite, 
+               hideCursor 0s 4s forwards;
+    width: 0;
+  }
+}
+
+/* Tablette : Animation typing rapide */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-subtitle {
+    overflow: hidden;
+    border-right: 2px solid var(--primary);
+    white-space: nowrap;
+    animation: typing 2s steps(30) 0.5s forwards, 
+               blink 0.75s step-end infinite, 
+               hideCursor 0s 3s forwards;
+    width: 0;
+  }
+}
+
+/* Mobile : Animation fade simple */
+@media (max-width: 768px) {
+  .hero-subtitle {
+    animation: none !important;
+    width: auto !important;
+    border: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    
+    opacity: 0;
+    animation: mobileFadeUp 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+  }
+}
+
+@keyframes mobileFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 8. CLASSE UTILITAIRE POUR DÉSACTIVER MANUELLEMENT */
+.no-typing-animation .hero-subtitle {
+  animation: none !important;
+  width: auto !important;
+  border: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  opacity: 1 !important;
 }
 
 @keyframes typing {
@@ -2379,19 +2581,6 @@ p {
   width: 100%; /* Important pour Chrome */
 }
 
-.service-card {
-  position: relative;
-  height: 400px;
-  width: 100%; /* Force la largeur sur Chrome */
-  margin: 0; /* Retire la marge gauche problématique */
-  border-radius: 20px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  background: var(--gray);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--shadow-card);
-}
 
 /* 4. About Grid - Fix Chrome */
 .about-grid {
@@ -2562,7 +2751,6 @@ p {
   .service-card {
     margin: 0;
     height: auto;
-    min-height: 350px;
   }
 
   .location-map {
