@@ -1383,6 +1383,7 @@ p {
 }
 
 .connected-card {
+  overflow: hidden;
   background: rgba(30, 30, 30, 0.6);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
