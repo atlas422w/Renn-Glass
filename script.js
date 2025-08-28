@@ -1110,4 +1110,230 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
+// ==============================================
+// FIX JAVASCRIPT HERO SUBTITLE MOBILE
+// ==============================================
+
+// Fonction à ajouter dans initAnimations() ou initHeroAnimations()
+function initHeroSubtitleAnimation() {
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (!subtitle) return;
+  
+  // Détecter si on est sur mobile
+  const isMobile = window.innerWidth <= 768;
+  const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  // Si l'utilisateur préfère moins d'animations, désactiver complètement
+  if (prefersReducedMotion) {
+    subtitle.style.animation = 'none';
+    subtitle.style.width = 'auto';
+    subtitle.style.border = 'none';
+    subtitle.style.overflow = 'visible';
+    subtitle.style.whiteSpace = 'normal';
+    subtitle.style.opacity = '1';
+    return;
+  }
+  
+  // Animation différente selon la taille d'écran
+  if (isMobile) {
+    // Mobile : Animation fade simple
+    subtitle.style.animation = 'none';
+    subtitle.style.width = 'auto';
+    subtitle.style.border = 'none';
+    subtitle.style.overflow = 'visible';
+    subtitle.style.whiteSpace = 'normal';
+    subtitle.style.opacity = '0';
+    subtitle.style.transform = 'translateY(30px)';
+    subtitle.style.textAlign = 'center';
+    
+    // Déclencher l'animation fade après un délai
+    setTimeout(() => {
+      subtitle.style.transition = 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      subtitle.style.opacity = '1';
+      subtitle.style.transform = 'translateY(0)';
+    }, 800);
+    
+  } else if (isTablet) {
+    // Tablette : Animation typing rapide
+    subtitle.style.animation = 'typing 2s steps(30) 0.5s forwards, blink 0.75s step-end infinite, hideCursor 0s 3s forwards';
+    
+  } else {
+    // Desktop : Animation typing complète
+    subtitle.style.animation = 'typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite, hideCursor 0s 4s forwards';
+  }
+}
+
+// Alternative : Animation word-by-word pour mobile
+function initWordByWordAnimation() {
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (!subtitle || window.innerWidth > 768) return;
+  
+  const text = subtitle.textContent;
+  const words = text.split(' ');
+  
+  // Vider le contenu et reconstruire avec des spans
+  subtitle.innerHTML = '';
+  
+  words.forEach((word, index) => {
+    const span = document.createElement('span');
+    span.textContent = word;
+    span.className = 'word';
+    span.style.opacity = '0';
+    span.style.display = 'inline-block';
+    span.style.marginRight = '0.3em';
+    span.style.animation = `wordReveal 0.6s ease-out ${0.2 + index * 0.2}s forwards`;
+    subtitle.appendChild(span);
+  });
+}
+
+// Fonction pour gérer le redimensionnement
+function handleSubtitleResize() {
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (!subtitle) return;
+  
+  const isMobile = window.innerWidth <= 768;
+  const currentlyMobile = subtitle.classList.contains('mobile-subtitle');
+  
+  // Si on change de mobile à desktop ou vice versa
+  if (isMobile && !currentlyMobile) {
+    subtitle.classList.add('mobile-subtitle');
+    initHeroSubtitleAnimation();
+  } else if (!isMobile && currentlyMobile) {
+    subtitle.classList.remove('mobile-subtitle');
+    initHeroSubtitleAnimation();
+  }
+}
+
+// Version optimisée avec Intersection Observer
+function initHeroSubtitleWithObserver() {
+  const subtitle = document.querySelector('.hero-subtitle');
+  if (!subtitle) return;
+  
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Observer pour déclencher l'animation quand visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Réinitialiser les styles
+          subtitle.style.animation = 'none';
+          subtitle.style.width = 'auto';
+          subtitle.style.border = 'none';
+          subtitle.style.overflow = 'visible';
+          subtitle.style.whiteSpace = 'normal';
+          subtitle.style.opacity = '0';
+          subtitle.style.transform = 'translateY(30px)';
+          subtitle.style.textAlign = 'center';
+          
+          // Animation fade avec délai
+          setTimeout(() => {
+            subtitle.style.transition = 'all 1.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            subtitle.style.opacity = '1';
+            subtitle.style.transform = 'translateY(0)';
+          }, 200);
+          
+          observer.unobserve(subtitle);
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: '50px'
+    });
+    
+    observer.observe(subtitle);
+  }
+}
+
+// INTÉGRATION DANS LE SCRIPT PRINCIPAL
+// Modifier la fonction existante initHeroAnimations()
+function initHeroAnimations() {
+  // Animation du titre existante...
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) {
+    const animateGradient = () => {
+      heroTitle.style.animation = 'gradientFlow 3s linear infinite';
+    };
+    setTimeout(animateGradient, 500);
+  }
+  
+  // AJOUTER ICI : Animation du sous-titre
+  initHeroSubtitleAnimation();
+}
+
+// Ajouter dans les event listeners
+window.addEventListener('resize', debounce(handleSubtitleResize, 250));
+
+// SOLUTION COMPLÈTE : Modifier l'initialisation existante
+document.addEventListener('DOMContentLoaded', () => {
+  // Vos initialisations existantes...
+  initNavigation();
+  initAnimations();
+  initStatistics();
+  initServiceCards();
+  initLocationMap();
+  initFileHandling();
+  initCarousel();
+  initFacebookWidget();
+  initContactMethods();
+  
+  // AJOUTER : Fix du sous-titre hero
+  setTimeout(() => {
+    initHeroSubtitleAnimation();
+    // OU initHeroSubtitleWithObserver(); pour version avec observer
+  }, 100);
+});
+
+// ALTERNATIVE : Classe CSS toggle via JavaScript
+function toggleSubtitleAnimation() {
+  const subtitle = document.querySelector('.hero-subtitle');
+  const isMobile = window.innerWidth <= 768;
+  
+  if (subtitle) {
+    if (isMobile) {
+      subtitle.classList.add('no-typing-animation');
+    } else {
+      subtitle.classList.remove('no-typing-animation');
+    }
+  }
+}
+
+// ==============================================
+// Effet de parallaxe (si nécessaire)
+// ==============================================
+function initParallax() {
+  const parallaxElements = document.querySelectorAll('.parallax-layer');
+  
+  if (parallaxElements.length > 0) {
+    const handleParallax = debounce(() => {
+      const scrollPosition = window.pageYOffset;
+      
+      parallaxElements.forEach((layer, index) => {
+        const speed = 0.2 + (index * 0.1);
+        const yPos = -(scrollPosition * speed);
+        layer.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      });
+    }, 10);
+
+    window.addEventListener('scroll', handleParallax);
+  }
+  
+  // AJOUTER CETTE LIGNE POUR iOS
+  // Détection Safari (non-Chrome) et application du correctif
+  var userAgent = navigator.userAgent.toLowerCase();
+  if (userAgent.indexOf('safari') != -1) {
+    if (userAgent.indexOf('chrome') > -1) {
+      // C'est Chrome, ne rien faire
+    } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
+      // C'est Opera, ne rien faire
+    } else {
+      // C'est Safari (iOS/macOS) - appliquer le correctif de parallaxe
+      document.head.innerHTML += '<style> .parallax{ background-attachment: initial !important; background-size: cover !important; } </style>';
+    }
+  }
+}
+// Appeler au chargement et au redimensionnement
+window.addEventListener('load', toggleSubtitleAnimation);
+window.addEventListener('resize', debounce(toggleSubtitleAnimation, 250));
 
