@@ -2273,3 +2273,455 @@ p {
   }
 }
 
+/* ==============================================
+   CORRECTIONS SPÉCIFIQUES POUR CHROME - RESPONSIVE
+   ============================================== */
+
+/* 1. Navigation - Fix Chrome mobile */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  position: relative; /* Ajout pour Chrome */
+}
+
+.nav-links-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Fix spécifique Chrome pour le menu mobile */
+@media (max-width: 768px) {
+  .nav-links-wrapper {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    left: auto; /* Important pour Chrome */
+    transform: none; /* Retire le translateX sur mobile */
+    width: 80%;
+    max-width: 320px; /* Largeur max pour Chrome */
+    height: 100vh;
+    height: 100svh; /* Support moderne pour Chrome */
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* Support WebKit/Chrome */
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    z-index: 999;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links-wrapper.active {
+    right: 0;
+  }
+}
+
+/* 2. Hero Section - Fix Chrome responsive */
+.hero-section {
+  min-height: 100vh;
+  min-height: 100svh; /* Support Chrome moderne */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 var(--space-xl);
+  width: 100%; /* Assure la largeur complète sur Chrome */
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 0; /* Fix Chrome grid overflow */
+}
+
+/* 3. Services Grid - Fix Chrome responsive */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  width: 100%; /* Important pour Chrome */
+}
+
+.service-card {
+  position: relative;
+  height: 400px;
+  width: 100%; /* Force la largeur sur Chrome */
+  margin: 0; /* Retire la marge gauche problématique */
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  background: var(--gray);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+/* 4. About Grid - Fix Chrome */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%; /* Chrome fix */
+}
+
+/* 5. Location Container - Fix Chrome */
+.location-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%; /* Chrome fix */
+}
+
+.location-map {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  margin: 0; /* Retire les marges problématiques */
+  max-height: 600px;
+  width: 100%; /* Force la largeur sur Chrome */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 6. Recruitment Container - Fix Chrome */
+.modern-recruitment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xxl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  width: 100%; /* Chrome fix */
+}
+
+/* 7. Connected Grid - Fix Chrome */
+.connected-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  width: 100%; /* Chrome fix */
+}
+
+/* 8. Values Grid - Fix Chrome */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%; /* Chrome fix */
+}
+
+/* 9. Stats Grid - Fix Chrome */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  width: 100%; /* Chrome fix */
+}
+
+.location-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  width: 100%; /* Chrome fix */
+}
+
+/* 10. Footer Content - Fix Chrome */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-xxl);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-xxl) var(--space-xl);
+  width: 100%; /* Chrome fix */
+}
+
+/* 11. Form Grid - Fix Chrome */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  width: 100%; /* Chrome fix */
+}
+
+/* 12. Contact Methods - Fix Chrome */
+.contact-methods {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  width: 100%; /* Chrome fix */
+}
+
+/* 13. Hero Image - Fix Chrome responsive */
+.floating-image {
+  animation: float 6s ease-in-out infinite;
+  max-width: 67%;
+  width: auto; /* Chrome fix */
+  height: auto;
+  object-fit: contain; /* Chrome fix */
+  margin-right: 8px;
+  margin-top: 90px;
+}
+
+/* 14. RESPONSIVE BREAKPOINTS SPÉCIFIQUES CHROME */
+
+/* Tablettes */
+@media screen and (max-width: 1024px) {
+  .hero-content,
+  .about-grid,
+  .location-container,
+  .modern-recruitment-container,
+  .connected-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stats-grid,
+  .location-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-image {
+    margin-top: var(--space-xxl);
+    order: -1;
+    text-align: center;
+  }
+
+  .floating-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  /* Reset des marges problématiques */
+  .service-card {
+    margin: 0;
+    height: auto;
+    min-height: 350px;
+  }
+
+  .location-map {
+    margin: 0;
+    min-height: 300px;
+  }
+
+  .values-grid,
+  .services-grid,
+  .location-stats,
+  .form-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  /* Hero mobile */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg) 0;
+  }
+
+  .floating-image {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Buttons mobile */
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    text-align: center;
+    max-width: 280px;
+  }
+}
+
+/* Petit mobile */
+@media screen and (max-width: 480px) {
+  .section {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .nav-container {
+    padding: 1rem 1rem;
+  }
+
+  .hero-section {
+    padding: 0 var(--space-md);
+  }
+
+  .connected-card,
+  .modern-recruitment-form,
+  .sidebar-card {
+    padding: var(--space-md);
+  }
+
+  .services-grid,
+  .connected-grid {
+    padding: 0 var(--space-md);
+  }
+
+  .parralax h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+/* 15. FIXES SPÉCIFIQUES WEBKIT/CHROME */
+
+/* Backdrop filter support */
+.glass-nav,
+.modern-recruitment-form,
+.sidebar-card,
+.connected-card {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Transform support */
+.hero-title .text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth scrolling Chrome */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix pour les grilles sur Chrome mobile */
+@supports (display: grid) {
+  .services-grid,
+  .values-grid,
+  .stats-grid,
+  .location-stats,
+  .form-grid {
+    display: grid;
+    width: 100%;
+  }
+}
+
+/* Fallback pour anciens navigateurs */
+@supports not (display: grid) {
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .service-card {
+    flex-basis: calc(33.333% - 20px);
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .service-card {
+      flex-basis: 100%;
+    }
+  }
+}
+
+/* 16. OPTIMISATIONS PERFORMANCE CHROME */
+
+/* GPU acceleration pour Chrome */
+.service-card,
+.value-card,
+.connected-card,
+.floating-image {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Optimisation des animations Chrome */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .value-card:hover,
+  .primary-button:hover {
+    will-change: transform, box-shadow;
+  }
+}
+
+/* Reset will-change après animation */
+.service-card,
+.value-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:not(:hover),
+.value-card:not(:hover) {
+  will-change: auto;
+}
