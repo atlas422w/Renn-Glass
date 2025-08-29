@@ -2396,14 +2396,15 @@ p {
   padding: 0 24px;
   position: relative;
   z-index: 2;
-  width: 100%; /* Important pour Chrome */
 }
 
+/* Carte Service Raffinée */
 .service-card {
   position: relative;
+  aspect-ratio: 4/5;
   height: 400px;
-  width: 100%; /* Force la largeur sur Chrome */
-  margin: 0; /* Retire la marge gauche problématique */
+  margin-left: 10%;
+
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
