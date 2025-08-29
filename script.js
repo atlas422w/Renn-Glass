@@ -581,6 +581,7 @@ p {
 }
 
 /* Section Services - Styles complets avec toutes les animations */
+/* Section Services - Styles complets avec toutes les animations */
 .services-section {
   position: relative;
   padding: 120px 0;
@@ -616,7 +617,7 @@ p {
 .service-card {
   position: relative;
   aspect-ratio: 4/5;
-    height: 400px;
+  height: 400px;
   margin-left: 10%;
 
   border-radius: 20px;
@@ -652,6 +653,7 @@ p {
 .service-card:hover .service-image img {
   filter: brightness(1) contrast(1.2);
 }
+
 
 /* Overlay avec dégradé subtil */
 .service-overlay {
