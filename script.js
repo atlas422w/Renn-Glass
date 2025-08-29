@@ -2283,17 +2283,20 @@ p {
 /* Responsive - Désactiver certaines animations sur mobile */
 @media (max-width: 768px) {
   .hero-section::before,
-  .floating-particles,
-  .breathe {
+  .floating-particles {
     animation: none;
   }
   
-  .hero-subtitle {
-    animation: none;
-    width: auto;
-    border: none;
-    opacity: 1;
+  .stat-number,
+  .stat-item .stat-number {
+    animation: none; 
+    transition: all 0.3s ease; 
   }
+  
+  .stat-card:active,
+  .stat-item:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
 }
 
 /* Préférences utilisateur - Respecter prefers-reduced-motion */
